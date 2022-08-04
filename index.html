@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Reflection - Reflection</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.9/dat.gui.min.js"
+      integrity="sha512-WoO4Ih0CDOSLYafy22wZD/mcJ7k0ESLqtQsFa6zFKnEUrbtuGU+GkLtVhgt93xa2qewG5gKEC6CWlN8OaCTSVg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"
+      integrity="sha512-rCZdHNB0AePry6kAnKAVFMRfWPmUXSo+/vlGtrOUvhsxD0Punm/xWbEh+8vppPIOzKB9xnk42yCRZ5MD/jvvjQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/addons/p5.sound.min.js"
+      integrity="sha512-WzkwpdWEMAY/W8WvP9KS2/VI6zkgejR4/KTxTl4qHx0utqeyVE0JY+S1DlMuxDChC7x0oXtk/ESji6a0lP/Tdg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div id="header" class="fixed h-16 w-full shadow-md bg-white">
+      <!-- progress bar -->
+      <div class="flex flex-row justify-evenly max-w-2xl m-auto h-full">
+        <a
+          class="my-auto text-zinc-200 font-bold px-4 py-2 rounded-2xl hover:bg-zinc-100 transition-all duration-200"
+          ><</a
+        >
+        <a
+          href="./index.html"
+          class="bg-green-600 hover:bg-green-500 w-32 h-2 rounded-2xl outline-2 outline-offset-2 outline-zinc-400 outline my-auto transition-all duration-200"
+        ></a>
+        <a
+          href="./sketch-2.html"
+          class="bg-zinc-400 hover:bg-zinc-500 w-32 h-2 rounded-2xl my-auto transition-all duration-200"
+        ></a>
+        <a
+          href="./sketch-3.html"
+          class="bg-zinc-400 hover:bg-zinc-500 w-32 h-2 rounded-2xl my-auto transition-all duration-200"
+        ></a>
+        <a
+          href="./sketch-4.html"
+          class="bg-zinc-400 hover:bg-zinc-500 w-16 h-2 rounded-2xl my-auto transition-all duration-200"
+        ></a>
+        <a
+          href="./sketch-5.html"
+          class="bg-zinc-400 hover:bg-zinc-500 w-16 h-2 rounded-2xl my-auto transition-all duration-200"
+        ></a>
+        <a
+          href="./sketch-2.html"
+          class="my-auto text-green-600 font-bold px-4 py-2 rounded-2xl hover:bg-zinc-100 transition-all duration-200"
+          >></a
+        >
+      </div>
+    </div>
+    <div class="flex flex-col max-w-xl mx-auto pt-16">
+      <h1 class="mt-8 text-2xl font-bold">Simple Reflection</h1>
+      <p class="mt-4">
+        Each and every point on the surface of a lit object constantly emits
+        rays of light that spread in all directions. A few of these rays make it
+        into our eyes, which do all the hard work of assembling the rays from
+        many points to generate the image that we see.
+      </p>
+      <!-- <p class="mt-4">
+        When you see yourself in the mirror, the light bouncing off you is
+        reflecting back to your eyes.
+      </p> -->
+      <p class="mt-4">
+        Imagine you are standing in front of a
+        <span class="text-blue-500 font-bold">mirror</span>, with a
+        <span class="text-yellow-500 font-bold"> light bulb</span> on your side.
+        You will be able to see the light builb from the mirror, right?
+      </p>
+    </div>
+
+    <!-- p5 sketch -->
+    <div id="sketch"></div>
+
+    <div class="flex flex-col max-w-xl mx-auto">
+      <h3 class="mx-auto italic" id="instruction">
+        Try to reflect the <span class="text-yellow-500 font-bold">ray</span> to
+        the <span class="text-gray-700 font-bold">eye</span> through the
+        <span class="text-blue-500 font-bold">mirror</span>.
+      </h3>
+      <div
+        class="opacity-0 transition-all duration-1000 ease-in-out"
+        id="following-text"
+      >
+        <h2 class="mt-8 text-xl font-bold">
+          This is all built from a simple rule
+        </h2>
+        <p class="mt-2">
+          When a ray of light encounters a surface, the angles that the incoming
+          and outgoing light make with the surface are equal.
+        </p>
+        <p class="mt-4">
+          In other words,
+          <span class="font-bold"
+            >the angle of incidence is equal to the angle of reflection.</span
+          >
+        </p>
+        <div class="w-full relative mt-12">
+          <a
+            href="./sketch-2.html"
+            class="absolute right-0 cursor-pointer transition-all duration-150 bg-black hover:bg-zinc-600 text-white rounded-md text-xl py-2 px-4"
+          >
+            Continue
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="pb-32"></div>
+  </body>
+  <script src="js/sketch-1/utils.js"></script>
+  <script src="js/sketch-1/Ray.js"></script>
+  <script src="js/sketch-1/MouseControlledRay.js"></script>
+  <script src="js/sketch-1/Target.js"></script>
+  <script src="js/sketch-1/Boundary.js"></script>
+  <script src="js/sketch-1/Controller.js"></script>
+  <script src="js/sketch-1/_domLogic.js"></script>
+  <script src="js/sketch-1/sketch.js"></script>
+</html>

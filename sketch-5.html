@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mirror Room in the Dark - Reflection</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.9/dat.gui.min.js"
+      integrity="sha512-WoO4Ih0CDOSLYafy22wZD/mcJ7k0ESLqtQsFa6zFKnEUrbtuGU+GkLtVhgt93xa2qewG5gKEC6CWlN8OaCTSVg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"
+      integrity="sha512-rCZdHNB0AePry6kAnKAVFMRfWPmUXSo+/vlGtrOUvhsxD0Punm/xWbEh+8vppPIOzKB9xnk42yCRZ5MD/jvvjQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/addons/p5.sound.min.js"
+      integrity="sha512-WzkwpdWEMAY/W8WvP9KS2/VI6zkgejR4/KTxTl4qHx0utqeyVE0JY+S1DlMuxDChC7x0oXtk/ESji6a0lP/Tdg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-black text-white">
+    <div id="header" class="fixed h-16 w-full shadow-md bg-zinc-800 z-10">
+      <!-- progress bar -->
+      <div class="flex flex-row justify-evenly max-w-2xl m-auto h-full">
+        <a
+          href="./sketch-2.html"
+          class="my-auto text-green-600 font-bold px-4 py-2 rounded-2xl hover:bg-zinc-100 transition-all duration-200"
+          ><</a
+        >
+        <a
+          href="./index.html"
+          class="bg-green-600 hover:bg-green-500 w-32 h-2 rounded-2xl my-auto transition-all duration-200"
+        ></a>
+        <a
+          href="./sketch-2.html"
+          class="bg-green-600 hover:bg-green-500 w-32 h-2 rounded-2xl my-auto transition-all duration-200"
+        ></a>
+        <a
+          href="./sketch-3.html"
+          class="bg-green-600 hover:bg-green-500 w-32 h-2 rounded-2xl my-auto transition-all duration-200"
+        ></a>
+
+        <a
+          href="./sketch-4.html"
+          class="bg-yellow-600 hover:bg-zinc-500 w-16 h-2 rounded-2xl my-auto transition-all duration-200"
+        ></a>
+        <a
+          href="./sketch-5.html"
+          class="bg-yellow-600 hover:bg-zinc-500 w-16 h-2 rounded-2xl outline-2 outline-offset-2 outline-zinc-400 outline my-auto transition-all duration-200"
+        ></a>
+        <a
+          class="my-auto text-zinc-200 font-bold px-4 py-2 rounded-2xl hover:bg-zinc-100 transition-all duration-200"
+          >></a
+        >
+      </div>
+    </div>
+    <div class="flex flex-col max-w-xl mx-auto pt-16">
+      <h1 class="mt-8 text-2xl font-bold">Mirror Room in the Dark</h1>
+      <p class="mt-4">
+        Welcome to the dark room with
+        <span class="text-blue-500 font-bold">randomly positioned mirrors</span
+        >. This time, you will be playing the
+        <span class="text-yellow-300 font-bold"> light source</span>.
+      </p>
+      <p class="mt-4">
+        Oops. Someone secretly left the
+        <span class="text-blue-200 font-bold">control panel</span> on the
+        <span class="font-bold">top right</span>. Tweak the room at your will.
+      </p>
+    </div>
+
+    <!-- p5 sketch -->
+    <div id="sketch" class="relative mt-12">
+      <div id="gui-container" class="absolute right-10"></div>
+    </div>
+
+    <div class="flex flex-col max-w-xl mx-auto">
+      <div class="w-full relative mt-24">
+        <a
+          href="./sketch-4.html"
+          class="absolute left-0 cursor-pointer transition-all duration-150 bg-white hover:bg-zinc-300 text-black rounded-md text-xl py-2 px-4"
+        >
+          Previous Playground
+        </a>
+
+        <a
+          href="./index.html"
+          class="absolute right-0 cursor-pointer transition-all duration-150 bg-zinc-500 hover:bg-zinc-600 text-white rounded-md text-xl py-2 px-4"
+        >
+          Back to Beginning
+        </a>
+      </div>
+    </div>
+    <div class="pb-32"></div>
+  </body>
+  <script src="js/sketch-5/gui.js"></script>
+  <script src="js/sketch-5/Ray.js"></script>
+  <script src="js/sketch-5/Boundary.js"></script>
+  <script src="js/sketch-5/sketch.js"></script>
+</html>
